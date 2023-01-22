@@ -1,0 +1,13 @@
+variable "ecs_cluster" {}
+variable "ecs_service" {}
+variable "vpc_id" {}
+variable "private_subnets" {}
+variable "security_group_id" {}
+variable "container_definition" {}
+variable "container_definition_json" {}
+variable "ecs_cluster_arn" {}
+variable "target_group_arn" {}
+variable "shared_tags" {}
+variable "ecs_cluster_name" {}
+variable "efs_id" {}
+variable "efs_access_point" {}
