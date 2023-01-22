@@ -1,6 +1,7 @@
 aws_region = "us-west-1"
 vpc_id = "vpc-16978f73"
-subnets = ["subnet-d271818a","subnet-dcda76b8"]
+public_subnets = ["subnet-d271818a","subnet-dcda76b8"]
+private_subnets = ["subnet-d271818a","subnet-dcda76b8"]
 shared_tags = {
   project_name = "nexus"
   environment  = "dev"

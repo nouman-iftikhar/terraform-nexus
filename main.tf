@@ -18,7 +18,7 @@ module "task_and_service" {
   ecs_cluster               = var.ecs_cluster
   ecs_service               = var.ecs_service
   vpc_id                    = var.vpc_id
-  private_subnets           = var.subnets
+  private_subnets           = var.private_subnets
   security_group_id         = module.alb.security_group_id
   container_definition      = var.container_definition
   container_definition_json = module.container_definition.container_definition_json
@@ -35,8 +35,8 @@ module "efs" {
   efs = var.efs
   shared_tags = var.shared_tags
   vpc_id = var.vpc_id
-  subnet_id_1 = var.subnets[0]
-  subnet_id_2 = var.subnets[1]
+  subnet_id_1 = var.private_subnets[0]
+  subnet_id_2 = var.private_subnets[1]
 }
 
 
@@ -45,7 +45,7 @@ module "alb" {
   alb                 = var.alb
   ecs_cluster         = var.ecs_cluster
   vpc_id              = var.vpc_id
-  public_subnets      = var.subnets
+  public_subnets      = var.public_subnets
   backend_port        = var.container_definition.port_mappings[0].containerPort
 }
 
